@@ -1,0 +1,15 @@
+<div class="enter-time-container">
+  <form name="enterTime">
+    <input type="date" name="lapDate" placeholder="date" required>
+    <select class="" name="Track" required="true">
+      <option>East Track</option>
+      <option>West Track</option>
+      <option>Full Track</option>
+    </select>
+    <input type="text" name="minutes" value="00" ng-model="time.minutes" ng-minlength="2" ng-maxlength="2" required>
+    <span class="time-separator">:</span>
+    <input type="text" name="seconds" value="00" ng-model="time.seconds" ng-minlength="2" ng-maxlength="2" required>
+    <span class="time-separator">:</span>
+    <input type="text" name="milliseconds" value="00" ng-model="time.milliseconds" ng-minlength="2" ng-maxlenght="2" required>
+  </form>
+</div>

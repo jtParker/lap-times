@@ -1,0 +1,61 @@
+<div class="times-container">
+
+
+  <div class="enter-time-container" ng-hide="!loggedIn">
+
+    <h2>{{ authData.facebook.displayName }}</h2>
+
+    <h2>Enter lap time</h2>
+
+    <form novalidate name="enterTime">
+
+      <input type="date" name="lapDate" placeholder="date" ng-model="lap.date" class="dateField">
+      <select name="Track" ng-model="lap.track" class="timeField">
+        <option>East Track</option>
+        <option>West Track</option>
+        <option>Full Track</option>
+      </select>
+      <input type="text" name="minutes" value="00" ng-model="lap.minutes" ng-minlength="2" ng-maxlength="2" required placeholder="minute" class="timeField">
+
+      <span class="time-separator">:</span>
+
+      <input type="text" name="seconds" value="00" ng-model="lap.seconds" ng-minlength="2" ng-maxlength="2" required placeholder="seconds" class="timeField">
+
+      <span class="time-separator">:</span>
+
+      <input type="text" name="milliseconds" value="00" ng-model="lap.milliseconds" ng-minlength="2" ng-maxlength="2" required placeholder="milliseconds" class="timeField">
+
+      <button type="button" name="button" ng-click="addTime()">Submit</button></br>
+    </form>
+      <span>{{ success }}</span>
+  </div>
+
+  <div class="redirect-container" ng-hide="loggedIn">
+    <p>
+      Please <a href="#/login">login</a> to see lap times.
+    </p>
+  </div>
+
+
+  <div class="my-times-container" ng-hide="!loggedIn">
+  </br>
+    <h2>My Times</h2>
+    <h3>East Track</h3>
+      <div class="profile-east">
+        <ul ng-repeat="laps in lapEast">
+          <li> {{ lapEast }}</li>
+        </ul>
+      </div>
+
+    <h3>West Track</h3>
+      <div class="profile-west">
+
+      </div>
+
+    <h3>Full Track</h3>
+      <div class="profile-full-track">
+
+      </div>
+
+  </div>
+</div>

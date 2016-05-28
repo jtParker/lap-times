@@ -1,0 +1,89 @@
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border-bottom: 1px solid white;
+  font-family: 'Racing Sans One', sans-serif;
+  color: white;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  margin: 70px 20px;
+}
+
+h2 {
+  margin: 0;
+  font-family: 'Racing Sans One', sans-serif;
+}
+
+.main-container {
+  background-image: url('http://dailyderbi.com/wp-content/uploads/2010/04/rsz_20100417-dsc_0023.jpg');
+  position: fixed;
+  /*background-color: black;*/
+  width: 100%;
+  height: 100%;
+  font-family: 'Racing Sans One', sans-serif;
+
+}
+
+.times-container {
+  background-color: white;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  box-shadow: 4px 6px 15px;
+  margin: 50px auto;
+  padding: 20px;
+  width: 600px;
+}
+
+.enter-time-container {
+  background-color: white;
+  margin: 0;
+}
+
+.timeField {
+  width: 70px;
+  height: 20px;
+  border: 1px solid black;
+}
+
+.dateField {
+  width: 100px;
+  height: 20px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.login-container {
+  background-color: white;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  box-shadow: 4px 6px 15px;
+  margin: 50px auto;
+  padding: 20px;
+  width: 600px;
+}
+
+.leaderboard-container {
+  background-color: white;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  box-shadow: 4px 6px 15px;
+  margin: 50px auto;
+  padding: 20px;
+  width: 600px;
+}
+
+.login-button:hover {
+  cursor: pointer;
+
+}
