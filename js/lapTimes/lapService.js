@@ -3,9 +3,9 @@ angular.module('timeTracker')
   .service('lapService', function(FBURL, $firebaseArray) {
 
     var ref = new Firebase(FBURL);
-    var lapRefEast = $firebaseArray(new Firebase(FBURL + '/lapTimes/East'));
-    var lapRefWest = $firebaseArray(new Firebase(FBURL + '/lapTimes/West'));
-    var lapRefFull = $firebaseArray(new Firebase(FBURL + '/lapTimes/Full'));
+    var lapRefEast = $firebaseArray(new Firebase(FBURL + '/East'));
+    var lapRefWest = $firebaseArray(new Firebase(FBURL + '/West'));
+    var lapRefFull = $firebaseArray(new Firebase(FBURL + '/Full'));
 
 
     this.enterLapTime = function(lapTime) {

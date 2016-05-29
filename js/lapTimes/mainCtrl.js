@@ -1,10 +1,11 @@
 angular.module('timeTracker')
 
-    .controller('mainCtrl', function($scope, FBURL, authService, lapService, $firebaseAuth, $firebaseArray) {
+    .controller('mainCtrl', function($scope, FBURL, authService, lapService, $firebaseAuth, $firebaseArray, $timeout) {
 
       var ref = new Firebase("https://lap-time-tracker.firebaseio.com");
-      var lapRef = new Firebase("https://lap-time-tracker.firebaseio.com").child("laptimes");
+      var lapRef = new Firebase("https://lap-time-tracker.firebaseio.com/East");
       var auth = $firebaseAuth(ref);
+      $scope.lapEast = $firebaseArray(lapRef);
 
 
       // var eastRef = new Firebase('https://lap-time-tracker.firebaseio.com/lapTimes/East/');
@@ -12,9 +13,7 @@ angular.module('timeTracker')
       $scope.loggedIn = false;
       $scope.auth = authService;
       $scope.lap = '';
-
-      $scope.lapEast = $firebaseArray(lapRef);
-
+      $scope.showSuccess = false;
 
       var authData = ref.getAuth();
 
@@ -23,12 +22,19 @@ angular.module('timeTracker')
         $scope.lap.racer = authData.facebook.displayName;
       }
 
+      $scope.showMessage = function() {
+        $scope.success = 'Lap time added!'
+        $timeout(function() {
+          $scope.showSuccess = true;
+        }, 3000);
+      }
+
       $scope.addTime = function(authdata) {
         $scope.lap.racer = authData.facebook.displayName;
         var lapTime = $scope.lap;
           lapService.enterLapTime(lapTime)
             $scope.lap = '';
-            $scope.success = 'Lap time added!'
+            $scope.showMessage();
       };
 
     });

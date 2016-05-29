@@ -27,7 +27,8 @@
 
       <button type="button" name="button" ng-click="addTime()">Submit</button></br>
     </form>
-      <span>{{ success }}</span>
+      <span ng-show="!showSuccess">{{ success }}</span>
+
   </div>
 
   <div class="redirect-container" ng-hide="loggedIn">
@@ -43,7 +44,7 @@
     <h3>East Track</h3>
       <div class="profile-east">
         <ul ng-repeat="laps in lapEast">
-          <li> {{ lapEast }}</li>
+          <li > {{ lapEast.$id }}</li>
         </ul>
       </div>
 
