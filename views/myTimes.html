@@ -2,9 +2,6 @@
 
 
   <div class="enter-time-container" ng-hide="!loggedIn">
-
-    <h2>{{ authData.facebook.displayName }}</h2>
-
     <h2>Enter lap time</h2>
 
     <form novalidate name="enterTime">
@@ -16,35 +13,26 @@
         <option>Full Track</option>
       </select>
       <input type="text" name="minutes" value="00" ng-model="lap.minutes" ng-minlength="2" ng-maxlength="2" required placeholder="minute" class="timeField">
-
-      <span class="time-separator">:</span>
-
-      <input type="text" name="seconds" value="00" ng-model="lap.seconds" ng-minlength="2" ng-maxlength="2" required placeholder="seconds" class="timeField">
-
-      <span class="time-separator">:</span>
-
-      <input type="text" name="milliseconds" value="00" ng-model="lap.milliseconds" ng-minlength="2" ng-maxlength="2" required placeholder="milliseconds" class="timeField">
-
-      <button type="button" name="button" ng-click="addTime()">Submit</button></br>
+        <span class="time-separator">:</span>
+        <input type="text" name="seconds" value="00" ng-model="lap.seconds" ng-minlength="2" ng-maxlength="2" required placeholder="seconds" class="timeField">
+        <span class="time-separator">:</span>
+        <input type="text" name="milliseconds" value="00" ng-model="lap.milliseconds" ng-minlength="2" ng-maxlength="2" required placeholder="milliseconds" class="timeField">
+        <button type="button" name="button" ng-click="addTime()">Submit</button></br>
     </form>
       <span ng-show="!showSuccess">{{ success }}</span>
-
-  </div>
-
+      <span ng-show="showError">{{ error }}</span>
   <div class="redirect-container" ng-hide="loggedIn">
     <p>
       Please <a href="#/login">login</a> to see lap times.
     </p>
   </div>
-
-
   <div class="my-times-container" ng-hide="!loggedIn">
   </br>
     <h2>My Times</h2>
-    <h3>East Track</h3>
+      <h3>East Track</h3>
       <div class="profile-east">
-        <ul ng-repeat="laps in lapEast">
-          <li > {{ lapEast.$id }}</li>
+        <ul ng-repeat="laps in laps" | filter:expression:user>
+          <li > {{ laps.minutes }}: {{ laps.seconds }}: {{laps.milliseconds}} <a href="" ng-click="laps.$remove(lap)">Delete</a></li>
         </ul>
       </div>
 

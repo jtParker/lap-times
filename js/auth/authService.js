@@ -69,6 +69,8 @@ angular.module('timeTracker')
         ref.unauth();
         $window.alert('You have successfully logged out.');
       };
+
+    
   });
 
 

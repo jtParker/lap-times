@@ -29,7 +29,13 @@ app.config([
     .state('myTimes', {
       url: '/my-times',
       templateUrl: './views/myTimes.html',
-      controller: 'mainCtrl',
+      controller: 'mainCtrl'
+    })
+
+    .state('profile', {
+      url: '/profile',
+      templateUrl: './views/profile.html',
+      controller: 'mainCtrl'
     })
   }
 

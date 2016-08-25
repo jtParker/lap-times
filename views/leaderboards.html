@@ -1,9 +1,20 @@
 <div class="leaderboard-container">
 
-  <h2>Leaderboards</h2>
+  <h2>Leaderboard</h2>
     <div class="eastTrackContainer">
-      <h1>{{ getUser }}</h1>
       <h3>East Track</h3>
+      <table class="leaderboard-times">
+        <tr class="table-heading">
+          <th>Racer</th>
+          <!-- <th>Date</th> -->
+          <th>Time</th>
+        </tr>
+        <tr ng-repeat="laps in laps | orderBy:['seconds','milliseconds'] | limitTo: 5">
+          <td>{{ laps.racer }}</td>
+          <!-- <td>no date</td> -->
+          <td>{{ laps.minutes }} :{{ laps.seconds }} :{{ laps.milliseconds }}</td>
+        </tr>
+      </table>
     </div>
 
     <div class="westTrackContainer">

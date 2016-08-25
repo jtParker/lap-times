@@ -18,7 +18,9 @@ header a {
   text-decoration: none;
   color: white;
   margin: 70px 20px;
+  position: relative;
 }
+
 
 h2 {
   margin: 0;
@@ -83,7 +85,29 @@ h2 {
   width: 600px;
 }
 
+.leaderboard-container h2 {
+  text-align: center;
+}
+
+.leaderboard-container h3 {
+  text-align: center;
+}
+
 .login-button:hover {
   cursor: pointer;
 
+}
+
+.profile-pic {
+  height: 60px;
+  padding: 5px;
+  margin-top: 30px;
+}
+
+.leaderboard-times th {
+  padding-right: 100px;
+}
+
+.leaderboard-times td {
+  padding-right: 100px;
 }

@@ -1,6 +1,6 @@
 angular.module('timeTracker')
 
-    .controller('authCtrl', function($scope, $state, authService) {
+    .controller('authCtrl', function($scope, $state, $location, authService) {
 
       $scope.user = {};
 
@@ -21,11 +21,13 @@ angular.module('timeTracker')
 
       $scope.loginFB = function() {
         authService.loginWithFB();
-      }
+          $state.go('myTimes');
+      };
 
       $scope.logout = function() {
         authService.logout();
-      }
+          $state.go('leaderboards');
+      };
 
 
 
